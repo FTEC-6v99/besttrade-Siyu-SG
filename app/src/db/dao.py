@@ -273,7 +273,7 @@ def buy_stock(ticker: str, price: float, quantity: int,account_number: int) -> N
     #get current balance
     db_cnx: MySQLConnection = get_cnx()
     cursor = db_cnx.cursor(dictionary=True) # always pass dictionary = True
-    sql: str = 'select * from portfolio where account_number= %s and ticker = %s'
+    sql: str = 'select * from portfolio where account_number= %s and ticker = %s;'
     cursor.execute(sql)
     result_bal = cursor.fetchone()
     current_balance = result_bal[2]
