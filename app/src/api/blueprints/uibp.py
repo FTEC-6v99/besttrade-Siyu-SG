@@ -16,3 +16,8 @@ def about():
 def investor_all():
     investors = dao.get_all_investor()
     return render_template('investors.html', investors = investors)  
+
+@uibp.route('/accounts', methods = ['GET'])
+def accounts_all():
+    accounts = dao.get_all_accounts()
+    return render_template('accounts.html', accounts = accounts)
