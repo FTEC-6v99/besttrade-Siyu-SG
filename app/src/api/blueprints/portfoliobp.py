@@ -14,8 +14,8 @@ def get_all_portfolios():
     else:
         return json.dumps(portfolios, default=lambda x: x.__dict__)
 
-@bp.route('/get-portfolio-by-acct-no/<int:account_number>')
-def get_portfolio_by_acct_number(account_number: int):
+@bp.route('/get-portfolio-by-acct-number/<int:account_number>')
+def get_portfolios_by_acct_id(account_number: int):
     portfolio: Portfolio = dao.get_portfolio_by_acct_number(account_number)
     if portfolio is None:
         return json.dumps('')
