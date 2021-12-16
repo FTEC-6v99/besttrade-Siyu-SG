@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from app.src.domain.Investor import Investor
+from app.src.domain.Account import Account
 import app.src.db.dao as dao
 
 uibp = Blueprint('ui',__name__, url_prefix = '/ui')
